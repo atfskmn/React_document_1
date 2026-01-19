@@ -463,6 +463,4 @@ Bu proje MIT lisansı altındadır.
 4. Push edin (`git push origin feature/AmazingFeature`)
 5. Pull Request açın
 
----
 
-**⭐ Beğendiyseniz yıldız vermeyi unutmayın!**
