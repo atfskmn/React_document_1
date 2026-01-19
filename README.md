@@ -1,73 +1,267 @@
-# React + TypeScript + Vite
+# Modern Web Sitesi Tasarımı - React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, animasyonlu ve responsive bir web sitesi şablonu. Vite ile hızlı geliştirme deneyimi, TypeScript ile tip güvenliği ve zengin animasyonlar içerir.
 
-Currently, two official plugins are available:
+## ✨ Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🚀 **Vite** - Anında HMR ve ultra hızlı build
+- ⚛️ **React 19** - En yeni React özellikleri
+- 📘 **TypeScript** - Tam tip güvenliği
+- 🎨 **Modern Tasarım** - Gradient'ler, animasyonlar, glassmorphism
+- 📱 **Responsive** - Mobil, tablet ve desktop için optimize
+- ♿ **Erişilebilir** - ARIA özellikleri ve klavye navigasyonu
+- 🎭 **Animasyonlar** - Fade-in, float, ripple, shimmer efektleri
+- 🌙 **Dark Theme** - Modern koyu tema
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📋 Minimum Gereksinimler
 
-## Expanding the ESLint configuration
+| Araç | Minimum | Önerilen | Projedeki |
+|---|---|---|---|
+| Node.js | 18.17.0 | 22.x LTS | 18+ |
+| npm | 8.0.0 | 10.x | 8+ |
+| Git | 2.25.0 | En son | 2.25+ |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Hızlı Başlangıç
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 1. Node.js Kurulumu
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Windows / macOS:**
+- [Node.js resmi sitesinden](https://nodejs.org/) LTS sürümü indirin
+
+**Linux (Ubuntu/Debian):**
+```bash
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Çoklu sürüm yönetimi için NVM (önerilir):**
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install --lts
+nvm use --lts
 ```
+
+Kurulumu doğrulayın:
+```bash
+node --version
+npm --version
+```
+
+---
+
+### 2. Projeyi Klonlayın
+
+```bash
+git clone git@github.com:atfskmn/React_document_1.git
+cd React_document_1
+```
+
+### 3. Bağımlılıkları Yükleyin
+
+```bash
+npm install
+```
+
+### 4. Geliştirme Sunucusunu Başlatın
+
+```bash
+npm run dev
+```
+
+Tarayıcınızda açın: **http://localhost:5173/**
+
+---
+
+## 📦 Komutlar
+
+| Komut | Açıklama |
+|---|---|
+| `npm run dev` | Geliştirme sunucusunu başlatır (port 5173) |
+| `npm run build` | Production build oluşturur |
+| `npm run preview` | Build'i önizler |
+| `npm run lint` | ESLint ile kod kalitesini kontrol eder |
+
+---
+
+## 🏗️ Proje Yapısı
+
+```text
+my-app/
+├── public/                 # Statik dosyalar
+│   └── vite.svg           # Favicon
+├── src/
+│   ├── assets/            # Görseller, SVG'ler
+│   │   └── react.svg
+│   ├── App.tsx            # Ana React bileşeni
+│   ├── App.css            # Ana stil dosyası
+│   ├── main.tsx           # Giriş noktası
+│   └── index.css          # Global stiller
+├── index.html             # HTML şablonu
+├── package.json           # Proje bağımlılıkları
+├── tsconfig.json          # TypeScript yapılandırması
+├── tsconfig.app.json      # App için TS config
+├── tsconfig.node.json     # Node için TS config
+├── vite.config.ts         # Vite yapılandırması
+└── eslint.config.js       # ESLint kuralları
+```
+
+---
+
+## 🎨 Kullanılan Teknolojiler
+
+### Ana Teknolojiler
+- **React 19.2.0** - UI kütüphanesi
+- **TypeScript 5.9.3** - Statik tipleme
+- **Vite 7.2.5 (Rolldown)** - Build tool
+
+### Geliştirme Araçları
+- **ESLint** - Kod kalitesi
+- **TypeScript ESLint** - TS linting
+- **Vite Plugin React** - React desteği
+
+---
+
+## 🎭 Proje Özellikleri
+
+### Tasarım
+- ✅ Sticky header (scroll ile sabit kalır)
+- ✅ Hero bölümü (60vh, gradient başlıklar)
+- ✅ Animasyonlu phone mock (float, app ikonları)
+- ✅ Feature kartları (hover efektleri)
+- ✅ CTA bölümü (shine animasyonu)
+- ✅ Responsive footer
+
+### Animasyonlar
+- **fadeInUp** - İçerik aşağıdan yukarı
+- **fadeInRight** - Telefon sağdan sola
+- **float** - Telefon yukarı-aşağı hareket
+- **iconPop** - İkonlar tek tek belirir
+- **shimmer** - Parıldama efekti
+- **ripple** - Buton tıklama dalgası
+- **pulse** - Arka plan nabız efekti
+
+### İnteraktif Özellikler
+- 🔘 Butonlara tıklayınca "Başladı" olur
+- 📜 Smooth scroll (CTA'ya kaydırma)
+- 🖱️ Hover efektleri (kartlar, linkler)
+- ⌨️ Klavye erişilebilirliği
+- 📱 Touch-friendly mobil tasarım
+
+---
+
+## 🔧 Özelleştirme
+
+### Renkleri Değiştirme
+`src/App.css` dosyasındaki CSS değişkenlerini düzenleyin:
+
+```css
+:root {
+  --container-max: 1100px;
+  --accent: #646cff;          /* Ana vurgu rengi */
+  --accent-light: #818cf8;    /* Açık vurgu */
+  --accent-dark: #4338ca;     /* Koyu vurgu */
+  --success: #10b981;         /* Başarı rengi */
+  --muted: #9aa4b2;           /* İkincil metin */
+}
+```
+
+### İçeriği Değiştirme
+`src/App.tsx` dosyasını düzenleyin:
+- Hero başlığı ve açıklaması
+- Feature kartları
+- Footer bilgileri
+- CTA metinleri
+
+---
+
+## 🌐 Deployment
+
+### GitHub Pages
+
+1. `vite.config.ts` dosyasına base ekleyin:
+```typescript
+export default defineConfig({
+  base: '/React_document_1/',
+  plugins: [react()],
+})
+```
+
+2. Build ve deploy:
+```bash
+npm run build
+npm install -g gh-pages
+gh-pages -d dist
+```
+
+### Vercel
+```bash
+npm install -g vercel
+vercel
+```
+
+### Netlify
+```bash
+npm run build
+# dist/ klasörünü Netlify'a sürükle-bırak
+```
+
+---
+
+## 🐛 Sorun Giderme
+
+**Port 5173 kullanımda:**
+```bash
+# Vite otomatik olarak 5174'e geçer
+# Veya belirli port:
+npm run dev -- --port 3000
+```
+
+**Cache temizleme:**
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+**Build hatası:**
+```bash
+npm run build -- --mode development
+```
+
+---
+
+## 📚 Ek Kaynaklar
+
+- [React Dokümantasyonu](https://react.dev)
+- [Vite Dokümantasyonu](https://vite.dev)
+- [TypeScript Dokümantasyonu](https://www.typescriptlang.org)
+
+---
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altındadır.
+
+---
+
+## 👤 Geliştirici
+
+**GitHub:** [@atfskmn](https://github.com/atfskmn)  
+**Repository:** [React_document_1](https://github.com/atfskmn/React_document_1)
+
+---
+
+## 🤝 Katkıda Bulunma
+
+1. Fork edin
+2. Feature branch oluşturun (`git checkout -b feature/AmazingFeature`)
+3. Commit edin (`git commit -m 'Add some AmazingFeature'`)
+4. Push edin (`git push origin feature/AmazingFeature`)
+5. Pull Request açın
+
+---
+
+**⭐ Beğendiyseniz yıldız vermeyi unutmayın!**
